@@ -31,6 +31,30 @@ player.speed(0)
 player.setposition(0, -250)
 player.setheading(90)
 
+# player movements
+playerspeed = 15
+
+def move_left():
+    x = player.xcor()
+    x -= playerspeed
+    if x < -280:
+        x = -280
+    player.setx(x)
+
+def move_right():
+    x = player.xcor()
+    x += playerspeed
+    if x > 280:
+        x = 280
+    player.setx(x)
+
+# create keyboard biding
+turtle.listen()
+turtle.onkey(move_left, "Left")
+turtle.onkey(move_right, "Right")
+
+
+
 
 
 
