@@ -30,10 +30,19 @@ player.penup()
 player.speed(0)
 player.setposition(0, -250)
 player.setheading(90)
-
-# player movements
 playerspeed = 15
 
+
+# create the enemy
+enemy = turtle.Turtle()
+enemy.color("red")
+enemy.shape("circle")
+enemy.penup()
+enemy.speed(0)
+enemy.setposition(-200, 250)
+enemyspeed = 2
+
+# player movements
 def move_left():
     x = player.xcor()
     x -= playerspeed
