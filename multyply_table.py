@@ -13,10 +13,13 @@ def i_x_m():
 next_step = "да"
 
 while next_step == "да":
-    i = int(input("Введите число: "))
+    i = int(input("Для какого числа нужна таблица умножения? "))
+    print("Вот ваша таблица:")
 
     i_x_m()
-    print("Хотите еще раз?")
+    print("Хотите еще?")
     next_step = input()
     if next_step != "да":
         print("К О Н Е Ц")
+
+
