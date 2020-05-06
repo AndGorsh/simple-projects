@@ -62,6 +62,30 @@ turtle.listen()
 turtle.onkey(move_left, "Left")
 turtle.onkey(move_right, "Right")
 
+# MAIN GAME LOOP
+while True:
+    # move enemy
+    x = enemy.xcor()
+    x += enemyspeed
+    enemy.setx(x)
+
+    # move the enemy back and down
+    if enemy.xcor() > 280:
+        y = enemy.ycor()
+        y -= 40
+        enemyspeed *= -1
+        enemy.sety(y)
+
+    if enemy.xcor() < -280:
+        y = enemy.ycor()
+        y -= 40
+        enemyspeed *= -1
+        enemy.sety(y)
+
+
+
+
+
 
 
 
