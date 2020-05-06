@@ -4,18 +4,24 @@ import turtle
 turtle.speed(0)
 turtle.bgcolor("black")
 turtle.hideturtle()
-for i in range(5):
+
+a = 200
+
+def draw_squares(a):
+        turtle.forward(a)
+        turtle.left(90)
+        turtle.forward(a)
+        turtle.left(90)
+        turtle.forward(a)
+        turtle.left(90)
+        turtle.forward(a)
+        turtle.left(90)
+
+for i in range(18):
     for colours in ["red","magenta", "blue", "cyan", "green", "yellow", "white"]:
         turtle.color(colours)
         turtle.pensize(3)
-        turtle.left(12)
-        turtle.forward(200)
-        turtle.left(90)
-        turtle.forward(200)
-        turtle.left(90)
-        turtle.forward(200)
-        turtle.left(90)
-        turtle.forward(200)
-        turtle.left(90)
+        turtle.left(3)
+        draw_squares(a)
 
 turtle.mainloop()
