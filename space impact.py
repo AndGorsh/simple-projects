@@ -29,7 +29,7 @@ player.color("blue")
 player.shape("triangle")
 player.penup()
 player.speed(0)
-player.setposition(0, -250)
+player.setposition(0, -260)
 player.setheading(90)
 playerspeed = 15
 
@@ -143,7 +143,11 @@ while True:
         #rest the enemy
         enemy.setposition(-200,250)
 
-
+    if isCollision(enemy, player):
+        player.hideturtle()
+        enemy.hideturtle()
+        print("GAME OVER")
+        break
 
 
 
