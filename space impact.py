@@ -77,7 +77,7 @@ bullet.setheading(90)
 bullet.shapesize(0.5, 0.5)
 bullet.hideturtle()
 
-bulletspeed = 20
+bulletspeed = 40
 
 # DEFINE BULLET STATE
 # "READY" - ready to fire
@@ -155,10 +155,10 @@ while True:
             bullet.hideturtle()
             bulletstate = "ready"
             bullet.setposition(0, -400)
-            #rest the enemy
-            x = player.xcor()
-            y = player.ycor() + 10
-            bullet.setposition(x, y)
+            #reset the enemy
+            x = random.randint(-200, 200)
+            y = random.randint(100, 250)
+            enemy.setposition(x, y)
 
         if isCollision(enemy, player):
             player.hideturtle()
