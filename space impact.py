@@ -1,3 +1,4 @@
+import math
 import turtle
 import os
 
@@ -87,13 +88,21 @@ def fire_bullet():
         bullet.showturtle()
 
 
+def isCollision(t1, t2):
+    distance = math.sqrt(math.pow(t1.xcor()-t2.xcor(),2)+math.pow(t1.ycor()-t2.ycor(),2))
+    if distance < 15:
+        return True
+    else:
+        return False
 
 
 # create keyboard biding
+
 turtle.listen()
 turtle.onkey(move_left, "Left")
 turtle.onkey(move_right, "Right")
 turtle.onkey(fire_bullet, "space")
+
 # MAIN GAME LOOP
 while True:
     # move enemy
@@ -125,6 +134,14 @@ while True:
         bullet.hideturtle()
         bulletstate = "ready"
 
+    #check for a collision between bullet and the enemy
+    if isCollision(bullet, enemy):
+        #reset the bullet
+        bullet.hideturtle()
+        bulletstate = "ready"
+        bullet.setposition(0, -400)
+        #rest the enemy
+        enemy.setposition(-200,250)
 
 
 
