@@ -7,7 +7,7 @@ import os
 wn = turtle.Screen()
 wn.bgcolor("black")
 wn.title("Space Invaders")
-
+wn.tracer(1)
 # draw border
 
 border_pen = turtle.Turtle()
@@ -138,16 +138,22 @@ while True:
 
         # move the enemy back and down
         if enemy.xcor() > 280:
-            y = enemy.ycor()
-            y -= 40
+            #MOVES ALL THE ENEMIES DOWN
+            for e in enemies:
+                y = e.ycor()
+                y -= 40
+                e.sety(y)
+            # CHANGE ENEMIES DIRECTION
             enemyspeed *= -1
-            enemy.sety(y)
 
         if enemy.xcor() < -280:
-            y = enemy.ycor()
-            y -= 40
+            # MOVES ALL THE ENEMIES DOWN
+            for e in enemies:
+                y = e.ycor()
+                y -= 40
+                e.sety(y)
+            #CHANGE ENEMIES DIRECTION
             enemyspeed *= -1
-            enemy.sety(y)
 
         #check for a collision between bullet and the enemy
         if isCollision(bullet, enemy):
