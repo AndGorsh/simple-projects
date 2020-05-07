@@ -1,5 +1,6 @@
 import math
 import turtle
+import random
 import os
 
 # set up the screen
@@ -35,13 +36,36 @@ playerspeed = 15
 
 
 # create the enemy
-enemy = turtle.Turtle()
-enemy.color("red")
-enemy.shape("circle")
-enemy.penup()
-enemy.speed(0)
-enemy.setposition(-200, 250)
+#enemy = turtle.Turtle()
+#enemy.color("red")
+#enemy.shape("circle")
+#enemy.penup()
+#enemy.speed(0)
+#enemy.setposition(-200, 250)
+#enemyspeed = 2
+
+# CHOOSE A NUMBER OF ENEMIES
+number_of_enemies = 5
+# create an empty list of enemies
+enemies = []
+
+# add enemies to the list
+for i in range(number_of_enemies):
+    # create the enemy
+    enemies.append(turtle.Turtle())
+
+for enemy in enemies:
+    enemy.color("red")
+    enemy.shape("circle")
+    enemy.penup()
+    enemy.speed(0)
+    x = random.randint(-200, 200)
+    y = random.randint(100,250)
+    enemy.setposition(x, y)
+
 enemyspeed = 2
+
+
 
 # create player's bullet
 bullet = turtle.Turtle()
