@@ -27,11 +27,12 @@ paddle_b.goto(350, 0)
 # BALL
 ball = turtle.Turtle()
 ball.speed(0)
-ball.shape("square")
+ball.shape("circle")
 ball.color("#9932CC")
 ball.penup()
 ball.goto(0, 0)
-
+ball.dx = 2
+ball.dy = 2
 
 
 def paddle_a_up():
@@ -71,3 +72,7 @@ wn.onkey(paddle_b_down, "Down")
 
 while True:
     wn.update()
+
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+
