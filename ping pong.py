@@ -34,6 +34,37 @@ ball.goto(0, 0)
 
 
 
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_a.sety(y)
+
+def paddle_b_up():
+    y = paddle_b.ycor()
+    y += 20
+    paddle_b.sety(y)
+
+def paddle_b_down():
+    y = paddle_b.ycor()
+    y -= 20
+    paddle_b.sety(y)
+
+# Keybord binding
+wn.listen()
+
+wn.onkey(paddle_a_up, "e")
+wn.onkey(paddle_a_down, "s")
+wn.onkey(paddle_b_up, "Up")
+wn.onkey(paddle_b_down, "Down")
+
+
+
+
 
 
 
